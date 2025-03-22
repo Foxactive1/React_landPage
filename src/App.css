@@ -1,0 +1,83 @@
+/* src/App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px 0;
+}
+
+.main-header h1 {
+  font-size: 2.5rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.main-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Para telas maiores, mantenha o chatbot como widget */
+@media (min-width: 769px) {
+  .chatbot-wrapper.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+  
+  .chatbot-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  
+  .chat-toggle {
+    display: block;
+  }
+}
+
+/* Para mobile, faça o chatbot ocupar a tela toda */
+@media (max-width: 768px) {
+  .chatbot-wrapper.hidden {
+    display: none;
+  }
+  
+  .chatbot-wrapper.visible {
+    display: block;
+  }
+  
+  .chat-toggle {
+    display: block;
+  }
+}
